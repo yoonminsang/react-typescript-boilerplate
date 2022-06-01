@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import { toast } from 'react-toastify';
 
 type Method = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
@@ -40,7 +41,8 @@ async function request<T>(method: Method, url: string, data?: unknown, multipart
     }
 
     if (res.data.expiredRefreshToken) {
-      // TODO
+      // TODO: 토스트메세지
+      toast.error('expired refresh token');
     }
 
     return res;

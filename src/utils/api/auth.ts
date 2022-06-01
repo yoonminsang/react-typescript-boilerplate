@@ -1,5 +1,6 @@
 import { ILogUser, IUser } from '@/types/auth';
 import { IError } from '@/types/error';
+
 import request from './request';
 
 export const loginApi = (email: string, password: string) =>

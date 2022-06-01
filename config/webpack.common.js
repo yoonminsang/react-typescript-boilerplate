@@ -24,8 +24,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-typescript', '@babel/preset-react'],
-            plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
+            presets: [
+              '@babel/preset-typescript',
+              ['@babel/preset-react', { runtime: 'automatic', importSource: '@emotion/react' }],
+            ],
+            plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }], '@emotion/babel-plugin'],
           },
         },
       },

@@ -17,12 +17,12 @@ module.exports = merge(common, {
     port: 3000,
     hot: true,
     historyApiFallback: true,
-    // proxy: {
-    //   '/api': {
-    //     target: '',
-    //     changeOrigin: true,
-    //     pathRewrite: { '/api': '/' },
-    //   },
-    // },
+    proxy: {
+      '/api': {
+        target: '',
+        changeOrigin: true,
+        pathRewrite: { '/api': '/' },
+      },
+    },
   },
 });
