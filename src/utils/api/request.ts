@@ -16,7 +16,12 @@ client.defaults.withCredentials = true;
 const multipartHeader = { 'Content-Type': 'multipart/form-data' };
 const applicationHeader = { 'Content-Type': 'application/json' };
 
-async function request<T>(method: Method, url: string, data?: unknown, multipart?: boolean): Promise<AxiosResponse<T>> {
+async function request<T, E = {}>(
+  method: Method,
+  url: string,
+  data?: unknown,
+  multipart?: boolean,
+): Promise<AxiosResponse<T>> {
   const contentType = multipart ? multipartHeader : applicationHeader;
   try {
     const accessToken = window.localStorage.getItem('user') || '';
@@ -36,12 +41,11 @@ async function request<T>(method: Method, url: string, data?: unknown, multipart
         window.localStorage.setItem('user', newAccessToken);
       }
 
-      const newResult = await request<T>(method, url, data);
+      const newResult = await request<T, E>(method, url, data);
       return newResult;
     }
 
     if (res.data.expiredRefreshToken) {
-      // TODO: 토스트메세지
       toast.error('expired refresh token');
     }
 
@@ -52,6 +56,11 @@ async function request<T>(method: Method, url: string, data?: unknown, multipart
         window.localStorage.removeItem('user');
         window.location.href = '/';
       }
+      if (err.response?.status && err.response?.status >= 500) {
+        toast.error('server error');
+      }
+    } else {
+      toast.error('inner error');
     }
     throw err;
   }
