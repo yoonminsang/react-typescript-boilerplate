@@ -1,8 +1,6 @@
 import { css, SerializedStyles, Theme } from '@emotion/react';
 import { useState } from 'react';
-import { ToastContainer } from 'react-toastify';
 
-import { ToastStyle } from './styles/toast.style';
 import media from './styles/media';
 
 import type { FC } from 'react';
@@ -33,26 +31,12 @@ const App: FC = () => {
   const [error, setError] = useState(false);
   if (error) throw new Error('err');
   return (
-    <>
-      <div css={SApp}>
-        <h1>앱</h1>
-        <button type="button" onClick={() => setError(true)}>
-          에러내기
-        </button>
-      </div>
-      <ToastContainer
-        css={ToastStyle}
-        position="bottom-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover={false}
-      />
-    </>
+    <div css={SApp}>
+      <h1>앱</h1>
+      <button type="button" onClick={() => setError(true)}>
+        에러내기
+      </button>
+    </div>
   );
 };
 
