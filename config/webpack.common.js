@@ -24,27 +24,17 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              '@babel/preset-typescript',
-              [
-                '@babel/preset-env',
-                {
-                  targets: '> 1%, not dead',
-                  useBuiltIns: 'usage',
-                  corejs: { version: '3' },
-                },
-              ],
-              '@babel/preset-react',
-            ],
+            presets: ['@babel/preset-typescript', '@babel/preset-react'],
+            plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
           },
         },
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
-        type: 'asset/resource',
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(png|jpg|jpeg|gif|ico|woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
     ],

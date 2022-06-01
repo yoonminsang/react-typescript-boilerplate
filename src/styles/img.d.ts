@@ -1,9 +1,6 @@
-declare module '*.png' {
-  const value: string;
-  export = value;
-}
-
-declare module '*.svg' {
-  const value: string;
-  export = value;
-}
+declare module '*.svg';
+declare module '*.png';
+declare module '*.jpg';
+declare module '*.jpeg';
+declare module '*.gif';
+declare module '*.ico';
