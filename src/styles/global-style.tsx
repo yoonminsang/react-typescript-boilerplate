@@ -1,7 +1,9 @@
 import { ReactElement } from 'react';
-import { Global, css, Theme, SerializedStyles } from '@emotion/react';
+import { Global, css, Theme } from '@emotion/react';
 
-const style = (theme: Theme): SerializedStyles => css`
+import { ScrollStyle } from './common/scroll.style';
+
+const style = (theme: Theme) => css`
   html,
   body {
     padding: 0;
@@ -11,21 +13,7 @@ const style = (theme: Theme): SerializedStyles => css`
   }
 
   html {
-    &::-webkit-scrollbar {
-      width: 6px;
-      background-color: ${theme.scrollLightGray};
-    }
-    &::-webkit-scrollbar-track {
-      background-color: ${theme.scrollLightGray};
-    }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 3px;
-      background-color: ${theme.scrollDarkGray};
-    }
-    &::-webkit-scrollbar-button {
-      width: 0;
-      height: 0;
-    }
+    ${ScrollStyle(theme)}
   }
 
   html,
@@ -34,18 +22,76 @@ const style = (theme: Theme): SerializedStyles => css`
     height: 100%;
   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  a,
-  button {
-    cursor: pointer;
-  }
+  // for reset
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   modify yoonminsang
+  */
 
   * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  *,
+  ::before,
+  ::after {
     box-sizing: border-box;
+    background-repeat: no-repeat;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  input,
+  textarea {
+    outline: 0;
+    background-color: inherit;
+  }
+  button {
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
   }
 
   // for toast
