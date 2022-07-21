@@ -1,11 +1,11 @@
-import { css, SerializedStyles, Theme } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import { useState } from 'react';
 
 import media from './styles/media';
 
 import type { FC } from 'react';
 
-const SApp = (theme: Theme): SerializedStyles => css`
+const SApp = (theme: Theme) => css`
   color: ${theme.colorBlue50};
   ${media.xxlarge} {
     font-size: 50px;
