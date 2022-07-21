@@ -1,3 +1,17 @@
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-export const WrapperS = css``;
+import { TypoStyle } from '@/styles/common/typo.style';
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    ${TypoStyle.displayS}
+  }
+  button {
+    ${TypoStyle.bodyL}
+  }
+`;

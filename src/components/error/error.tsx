@@ -8,12 +8,12 @@ interface Props {
 
 const Error: FC<Props> = ({ resetErrorBoundary }) => {
   return (
-    <div css={S.WrapperS}>
-      There was an error!
+    <S.Wrapper>
+      <h1>There was an error!</h1>
       <button type="button" onClick={resetErrorBoundary}>
         Try again
       </button>
-    </div>
+    </S.Wrapper>
   );
 };
 

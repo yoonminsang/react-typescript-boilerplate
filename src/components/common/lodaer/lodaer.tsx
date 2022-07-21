@@ -3,7 +3,7 @@ import * as S from './lodaer.style';
 import type { FC } from 'react';
 
 const Loader: FC = () => {
-  return <div css={S.WrapperS}>loading...</div>;
+  return <S.Wrapper>loading...</S.Wrapper>;
 };
 
 export default Loader;
