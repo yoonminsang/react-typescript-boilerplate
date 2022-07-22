@@ -6,10 +6,18 @@
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js --progress",
     "build": "webpack --config config/webpack.prod.js --progress",
-    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --parser-options=project:'./tsconfig.json'",
     "test": "jest --config ./jest.config.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --parser-options=project:'./tsconfig.json'",
+    "lint:fix": "eslint ./src --ext .js,.jsx,.ts,.tsx --parser-options=project:'./tsconfig.json' --fix",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint:fix"
+    ]
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -63,8 +71,10 @@
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-storybook": "^0.5.12",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
+    "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.6.0",
     "prettier": "^2.6.2",
     "style-loader": "^3.3.1",
