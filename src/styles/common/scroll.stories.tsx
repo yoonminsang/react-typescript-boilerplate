@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import theme from '../theme';
+import { theme } from '../theme';
 import { ScrollStyle } from './scroll.style';
 
 const Div = styled.div`

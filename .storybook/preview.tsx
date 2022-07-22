@@ -1,5 +1,4 @@
-import GlobalStyle from '@/styles/global-style';
-import theme from '@/styles/theme';
+import { GlobalStyle, theme } from '@/styles';
 import { ThemeProvider } from '@emotion/react';
 import { DecoratorFn } from '@storybook/react';
 
