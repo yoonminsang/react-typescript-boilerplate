@@ -1,7 +1,5 @@
 import '@emotion/react';
 
-// https://make.wordpress.org/core/2021/02/23/standardization-of-wp-admin-colors-in-wordpress-5-7/
-
 declare module '@emotion/react' {
   export interface Theme {
     colorWhite: string;

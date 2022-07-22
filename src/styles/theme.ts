@@ -2,6 +2,8 @@ import { Theme } from '@emotion/react';
 
 import { media } from './media';
 
+// refer to https://make.wordpress.org/core/2021/02/23/standardization-of-wp-admin-colors-in-wordpress-5-7/
+
 export const theme: Theme = {
   colorWhite: '#fff',
   colorGray0: '#f6f7f7',
