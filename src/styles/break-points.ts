@@ -1,4 +1,4 @@
-const breakPoints = {
+export const breakPoints = {
   xxlarge: 1920,
   xlarge: 1440,
   large: 1200,
@@ -6,5 +6,3 @@ const breakPoints = {
   small: 768,
   xsmall: 375,
 };
-
-export default breakPoints;

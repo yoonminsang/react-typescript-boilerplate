@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { TypoStyle } from '@/styles/common/typo.style';
+import { TypoStyle } from '@/styles/common';
 
 export const Wrapper = styled.div`
   display: flex;

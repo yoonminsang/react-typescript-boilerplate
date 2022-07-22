@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Global, css, Theme } from '@emotion/react';
 
-import { ScrollStyle } from './common/scroll.style';
+import { ScrollStyle } from './common';
 
 const style = (theme: Theme) => css`
   html,
@@ -130,8 +130,6 @@ const style = (theme: Theme) => css`
   }
 `;
 
-const GlobalStyle = (): ReactElement => {
+export const GlobalStyle = (): ReactElement => {
   return <Global styles={style} />;
 };
-
-export default GlobalStyle;

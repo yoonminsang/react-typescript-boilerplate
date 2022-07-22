@@ -1,4 +1,4 @@
-const theme = {
+export const theme = {
   white: '#fff',
   scrollLightGray: '#eee',
   scrollDarkGray: '#c1c1c1',
@@ -52,5 +52,3 @@ const theme = {
   colorGreen90: '#003008',
   colorGreen100: '#001c05',
 };
-
-export default theme;

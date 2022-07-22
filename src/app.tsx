@@ -1,7 +1,7 @@
 import { css, Theme } from '@emotion/react';
 import { useState } from 'react';
 
-import media from './styles/media';
+import { media } from './styles';
 
 import type { FC } from 'react';
 
