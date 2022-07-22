@@ -1,6 +1,8 @@
+import { Theme } from '@emotion/react';
+
 import { media } from './media';
 
-export const theme = {
+export const theme: Theme = {
   colorWhite: '#fff',
   colorGray0: '#f6f7f7',
   colorGray2: '#f0f0f1',
