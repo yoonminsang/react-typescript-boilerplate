@@ -34,7 +34,7 @@ module.exports = {
                 '@emotion/babel-plugin',
                 {
                   autoLabel: 'dev-only',
-                  labelFormat: 'dev--[dirname]--[filename]--[local]',
+                  labelFormat: '[dirname]--[filename]--[local]___',
                 },
               ],
             ],
