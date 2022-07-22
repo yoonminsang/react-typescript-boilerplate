@@ -1,28 +1,26 @@
 import { css, Theme } from '@emotion/react';
 import { useState } from 'react';
 
-import { media } from './styles';
-
 import type { FC } from 'react';
 
 const SApp = (theme: Theme) => css`
   color: ${theme.colorBlue50};
-  ${media.xxlarge} {
+  ${theme.xxlarge} {
+    font-size: 60px;
+  }
+  ${theme.xlarge} {
     font-size: 50px;
   }
-  ${media.xlarge} {
-    font-size: 50px;
-  }
-  ${media.large} {
+  ${theme.large} {
     font-size: 40px;
   }
-  ${media.medium} {
+  ${theme.medium} {
     font-size: 30px;
   }
-  ${media.small} {
+  ${theme.small} {
     font-size: 20px;
   }
-  ${media.xsmall} {
+  ${theme.xsmall} {
     font-size: 10px;
   }
 `;
