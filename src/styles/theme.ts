@@ -1,7 +1,7 @@
+import { media } from './media';
+
 export const theme = {
-  white: '#fff',
-  scrollLightGray: '#eee',
-  scrollDarkGray: '#c1c1c1',
+  colorWhite: '#fff',
   colorGray0: '#f6f7f7',
   colorGray2: '#f0f0f1',
   colorGray5: '#dcdcde',
@@ -51,4 +51,10 @@ export const theme = {
   colorGreen80: '#00450c',
   colorGreen90: '#003008',
   colorGreen100: '#001c05',
+  xxlarge: media.xxlarge,
+  xlarge: media.xlarge,
+  large: media.large,
+  medium: media.medium,
+  small: media.small,
+  xsmall: media.xsmall,
 };
