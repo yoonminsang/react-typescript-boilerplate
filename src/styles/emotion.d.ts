@@ -4,9 +4,7 @@ import '@emotion/react';
 
 declare module '@emotion/react' {
   export interface Theme {
-    white: string;
-    scrollLightGray: string;
-    scrollDarkGray: string;
+    colorWhite: string;
     colorGray0: string;
     colorGray2: string;
     colorGray5: string;
@@ -56,5 +54,11 @@ declare module '@emotion/react' {
     colorGreen80: string;
     colorGreen90: string;
     colorGreen100: string;
+    xxlarge: string;
+    xlarge: string;
+    large: string;
+    medium: string;
+    small: string;
+    xsmall: string;
   }
 }
