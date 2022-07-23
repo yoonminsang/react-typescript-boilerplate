@@ -18,7 +18,7 @@ export const TypoStyle = {
     font-size: 32px;
     line-height: 1.2;
   `,
-  headminM: css`
+  headingM: css`
     font-weight: 700;
     font-size: 28px;
     line-height: 1.2;
