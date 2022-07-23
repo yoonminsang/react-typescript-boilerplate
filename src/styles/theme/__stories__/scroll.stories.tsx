@@ -1,16 +1,13 @@
 import styled from '@emotion/styled';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { theme } from '../theme';
-import { ScrollStyle } from './scroll.style';
-
 const Div = styled.div`
   height: 200vh;
   margin: 20px;
   background-color: gray;
   overflow: auto;
 
-  ${ScrollStyle(theme)}
+  ${(props) => props.theme.scroll}
 `;
 
 export default {

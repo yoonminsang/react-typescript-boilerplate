@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { TypoStyle } from './typo.style';
+import { TypoStyle } from '../typo.style';
 
 const Div = styled.div``;
 
