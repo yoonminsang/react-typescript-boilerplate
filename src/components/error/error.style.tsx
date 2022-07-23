@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 
-import { TypoStyle } from '@/styles/common';
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,9 +7,9 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   h1 {
-    ${TypoStyle.displayS}
+    ${(props) => props.theme.displayS}
   }
   button {
-    ${TypoStyle.bodyL}
+    ${(props) => props.theme.bodyL}
   }
 `;
