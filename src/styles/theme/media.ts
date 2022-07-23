@@ -1,8 +1,5 @@
-import { breakPoints } from './break-points';
-
-export const mediaQuery = (maxWidth: number): string => `
-  @media (max-width: ${maxWidth}px)
-`;
+import { breakPoints } from '../break-points';
+import { mediaQuery } from '../media-query';
 
 export const media = {
   xxlarge: mediaQuery(breakPoints.xxlarge),

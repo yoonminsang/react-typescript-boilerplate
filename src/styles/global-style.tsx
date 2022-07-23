@@ -1,8 +1,6 @@
 import { ReactElement } from 'react';
 import { Global, css, Theme } from '@emotion/react';
 
-import { ScrollStyle } from './common';
-
 const style = (theme: Theme) => css`
   html,
   body {
@@ -13,7 +11,7 @@ const style = (theme: Theme) => css`
   }
 
   html {
-    ${ScrollStyle(theme)}
+    ${theme.scroll}
   }
 
   html,
