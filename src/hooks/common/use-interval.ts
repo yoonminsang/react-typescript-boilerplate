@@ -3,8 +3,8 @@ import { useEffect, useRef } from 'react';
 
 // refer to https://github.com/donavon/use-interval/blob/master/src/index.tsx
 
-type Delay = number | null;
 type TimerHandler = (...args: any[]) => void;
+type Delay = number | null;
 
 /**
  * Provides a declarative useInterval
