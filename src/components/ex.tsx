@@ -43,34 +43,7 @@ const Ex: FC = () => {
         <>
           <Link to={`${URL}`}>홈</Link>
           <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
+          <Link to={`${URL.ex['hook-form']}`}>훅 폼</Link>
         </>
       )}
     </ExWrapper>
