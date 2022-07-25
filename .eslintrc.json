@@ -37,6 +37,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "jest/no-commented-out-tests": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "consistent-return": "off",
     "class-methods-use-this": "off",
     "no-console": "off",
