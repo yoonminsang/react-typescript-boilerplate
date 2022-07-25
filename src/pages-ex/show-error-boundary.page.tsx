@@ -25,7 +25,7 @@ const SApp = (theme: Theme) => css`
   }
 `;
 
-const ErrorBoundaryPage: FC = () => {
+const ShowErrorBoundaryPage: FC = () => {
   const [error, setError] = useState(false);
   if (error) throw new Error('err');
   return (
@@ -38,4 +38,4 @@ const ErrorBoundaryPage: FC = () => {
   );
 };
 
-export default ErrorBoundaryPage;
+export default ShowErrorBoundaryPage;

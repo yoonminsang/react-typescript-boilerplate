@@ -5,15 +5,17 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { ToastContainer } from 'react-toastify';
 
 import App from './app';
-import { Error } from './components/error';
 import { ToastStyle } from './styles/toast.style';
 import { Loader } from './components/common';
 import { GlobalStyle, theme } from './styles';
+import ErrorBoundaryPage from './pages/error/error-boundary';
 
 ReactDOM.createRoot(window.document.getElementById('root') as HTMLElement).render(
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <ErrorBoundary fallbackRender={({ resetErrorBoundary }) => <Error resetErrorBoundary={resetErrorBoundary} />}>
+    <ErrorBoundary
+      fallbackRender={({ resetErrorBoundary }) => <ErrorBoundaryPage resetErrorBoundary={resetErrorBoundary} />}
+    >
       <Suspense fallback={<Loader />}>
         <App />
       </Suspense>

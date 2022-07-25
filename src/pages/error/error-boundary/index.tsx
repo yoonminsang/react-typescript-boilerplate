@@ -1,4 +1,4 @@
-import * as S from './error.style';
+import * as S from './index.style';
 
 import type { FC } from 'react';
 
@@ -6,7 +6,7 @@ interface Props {
   resetErrorBoundary: (...args: unknown[]) => void;
 }
 
-const Error: FC<Props> = ({ resetErrorBoundary }) => {
+const ErrorBoundaryPage: FC<Props> = ({ resetErrorBoundary }) => {
   return (
     <S.Wrapper>
       <h1>There was an error!</h1>
@@ -17,4 +17,4 @@ const Error: FC<Props> = ({ resetErrorBoundary }) => {
   );
 };
 
-export default Error;
+export default ErrorBoundaryPage;
