@@ -3,7 +3,10 @@ export const URL = {
   ex: {
     toString: () => '/ex',
     'error-boundary': {
-      toString: () => '/ex/error-boundary',
+      toString: () => '/ex/show-error-boundary',
+    },
+    'hook-form': {
+      toString: () => 'ex/hook-form',
     },
   },
 };
