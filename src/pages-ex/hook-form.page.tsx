@@ -26,9 +26,9 @@ const InputWrapper = styled.label`
 
 const Input = forwardRef<HTMLLabelElement, InputProps>(({ label, errorMessage, ...props }, ref) => {
   return (
-    <InputWrapper>
+    <InputWrapper ref={ref}>
       {label && <div>{label}</div>}
-      <input {...props} ref={ref} />
+      <input {...props} />
       {errorMessage && <div>{errorMessage}</div>}
     </InputWrapper>
   );
