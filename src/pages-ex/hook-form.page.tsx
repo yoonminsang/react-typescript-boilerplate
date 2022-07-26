@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
-import { ButtonHTMLAttributes, InputHTMLAttributes, useEffect, forwardRef } from 'react';
+import { ButtonHTMLAttributes, InputHTMLAttributes, useEffect, forwardRef, useState } from 'react';
+import cuid from 'cuid';
 
 import type { FC } from 'react';
 
@@ -11,9 +12,10 @@ import type { FC } from 'react';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   errorMessage?: string;
+  isDirty?: boolean;
 }
 
-const InputWrapper = styled.label`
+const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -24,12 +26,13 @@ const InputWrapper = styled.label`
   }
 `;
 
-const Input = forwardRef<HTMLLabelElement, InputProps>(({ label, errorMessage, ...props }, ref) => {
+const Input = forwardRef<HTMLInputElement, InputProps>(({ label, errorMessage, isDirty, ...props }, ref) => {
+  const [id] = useState<string>(cuid());
   return (
-    <InputWrapper ref={ref}>
-      {label && <div>{label}</div>}
-      <input {...props} />
-      {errorMessage && <div>{errorMessage}</div>}
+    <InputWrapper>
+      {label && <label htmlFor={id}>{label}</label>}
+      <input {...props} id={id} ref={ref} aria-invalid={!isDirty ? undefined : errorMessage ? 'true' : 'false'} />
+      {errorMessage && <span role="alert">{errorMessage}</span>}
     </InputWrapper>
   );
 });
@@ -85,7 +88,7 @@ const HookFormPage: FC = () => {
     reset();
   };
 
-  console.log(watch('email'));
+  console.log(watch('email'), watch('password'));
   useEffect(() => {
     trigger();
   }, [trigger]);
@@ -127,7 +130,7 @@ const HookFormPage: FC = () => {
         />
       </div>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button type="submit" disabled={isSubmitting} data-testid="login">
         로그인
       </Button>
     </Form>
