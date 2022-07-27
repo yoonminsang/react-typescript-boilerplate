@@ -8,5 +8,8 @@ export const URL = {
     'hook-form': {
       toString: () => 'ex/hook-form',
     },
+    'react-query': {
+      toString: () => 'ex/react-query',
+    },
   },
 };
