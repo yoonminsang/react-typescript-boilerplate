@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import axios, { AxiosInstance, AxiosRequestHeaders, AxiosResponse } from 'axios';
+import axios, { AxiosInstance, AxiosRequestHeaders } from 'axios';
 import { toast } from 'react-toastify';
 
 import { addQuery, changeParam } from './api.helper';
 
 const client: AxiosInstance = axios.create();
 
-client.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/api' : '';
+// client.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/api' : '';
 client.defaults.withCredentials = true;
 
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
@@ -30,9 +30,9 @@ async function request<T>({
   query?: Record<string, any>;
   param?: Record<string, any>;
   headerOption?: AxiosRequestHeaders;
-}): Promise<AxiosResponse<T> | void> {
+}): Promise<T> {
   try {
-    const res = await client({
+    const { data } = await client({
       method,
       headers: {
         'Content-Type': 'application/json',
@@ -42,16 +42,16 @@ async function request<T>({
       data: body,
       url: getUrl(url, query, param),
     });
-    return res;
+    return data;
   } catch (err) {
     if (axios.isAxiosError(err)) {
       if (err.response?.status && err.response?.status >= 500) {
         toast.error('server error');
       }
-      throw err;
     } else {
       toast.error('inner error');
     }
+    throw err;
   }
 }
 
