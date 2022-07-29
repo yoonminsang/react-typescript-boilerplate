@@ -6,9 +6,9 @@ import { ToastContainer } from 'react-toastify';
 import { QueryClient, QueryClientProvider, QueryErrorResetBoundary } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import axios from 'axios';
+import 'react-toastify/dist/ReactToastify.css';
 
 import App from './app';
-import { ToastStyle } from './styles/toast.style';
 import { Loader } from './components/common';
 import { GlobalStyle, theme } from './styles';
 import ErrorBoundaryPage from './pages/error/error-boundary';
@@ -52,7 +52,6 @@ ReactDOM.createRoot(window.document.getElementById('root') as HTMLElement).rende
       </QueryErrorResetBoundary>
     </QueryClientProvider>
     <ToastContainer
-      css={ToastStyle}
       position="bottom-center"
       autoClose={3000}
       hideProgressBar={false}
