@@ -65,9 +65,14 @@ const ReactQueryPageWrapper = styled.div`
   }
 `;
 const ReactQueryPage: FC = () => {
+  const { isLoading, isError, mutate } = RQ.POSTS.usePostPost({ title: 'title', body: 'body', userId: 1 });
+  console.log('mutation', isLoading, isError);
   return (
     <ReactQueryPageWrapper>
       <h1>리액트쿼리 페이지</h1>
+      <button type="button" onClick={() => mutate()}>
+        post 버튼
+      </button>
       <Suspense fallback={<PostsLoading />}>
         <Posts />
       </Suspense>
