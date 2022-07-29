@@ -43,8 +43,8 @@ const PostsWrapper = styled.div`
   }
 `;
 const Posts: FC = () => {
-  const { data: posts, error } = RQ.POSTS.useGetPosts();
-  console.log(error);
+  const { data: posts } = RQ.POSTS.useGetPosts();
+
   if (!posts || posts.length === 0) return <div>글이 존재하지 않습니다</div>;
   return (
     <PostsWrapper>
