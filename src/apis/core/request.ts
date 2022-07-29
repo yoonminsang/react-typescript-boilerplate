@@ -15,7 +15,7 @@ const getUrl = (url: string, query?: Record<string, any>, param?: Record<string,
   return changeParam(addQuery(url, query), param);
 };
 
-async function request<T>({
+async function request<T, B = {}>({
   method,
   url,
   body,
@@ -25,7 +25,7 @@ async function request<T>({
 }: {
   method: Method;
   url: string;
-  body?: any;
+  body?: B;
   query?: Record<string, any>;
   param?: Record<string, any>;
   headerOption?: AxiosRequestHeaders;
