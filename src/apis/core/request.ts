@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import axios, { AxiosInstance, AxiosRequestHeaders } from 'axios';
-import { toast } from 'react-toastify';
 
 import { addQuery, changeParam } from './api.helper';
 
@@ -31,28 +30,17 @@ async function request<T>({
   param?: Record<string, any>;
   headerOption?: AxiosRequestHeaders;
 }): Promise<T> {
-  try {
-    const { data } = await client({
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-        ...headerOption,
-      },
-      withCredentials: true,
-      data: body,
-      url: getUrl(url, query, param),
-    });
-    return data;
-  } catch (err) {
-    if (axios.isAxiosError(err)) {
-      if (err.response?.status && err.response?.status >= 500) {
-        toast.error('server error');
-      }
-    } else {
-      toast.error('inner error');
-    }
-    throw err;
-  }
+  const { data } = await client({
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+      ...headerOption,
+    },
+    withCredentials: true,
+    data: body,
+    url: getUrl(url, query, param),
+  });
+  return data;
 }
 
 export default request;
