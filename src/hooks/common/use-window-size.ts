@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { throttle } from '@/utils/common';
+import { UTILS } from '@/utils';
 
 interface IWindowSize {
   width: number;
@@ -11,7 +11,7 @@ export function useWindowSize() {
   const [windowSize, setWindowSize] = useState<IWindowSize>({ width: window.innerWidth, height: window.innerHeight });
 
   useEffect(() => {
-    const handleResize = throttle(() => {
+    const handleResize = UTILS.COMMON.throttle(() => {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,

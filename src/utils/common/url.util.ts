@@ -1,4 +1,4 @@
-export const URL = {
+export const url = {
   toString: () => '/',
   ex: {
     toString: () => '/ex',

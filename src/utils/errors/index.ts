@@ -10,7 +10,7 @@ const errorHandler = {
   common: () => toast.error('common error'),
 };
 
-export const handleError = (err: unknown) => {
+const handleError = (err: unknown) => {
   if (axios.isAxiosError(err)) {
     const status = err.response?.status;
     switch (status) {
@@ -22,4 +22,8 @@ export const handleError = (err: unknown) => {
         errorHandler.common();
     }
   }
+};
+
+export const ERROS = {
+  handleError,
 };

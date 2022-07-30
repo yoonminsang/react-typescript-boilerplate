@@ -14,8 +14,8 @@ import App from './app';
 import { Loader } from './components/common';
 import { GlobalStyle, theme } from './styles';
 import ErrorBoundaryPage from './pages/error/error-boundary';
-import { handleError } from './utils/errors';
 import { rootReducer } from './store';
+import { UTILS } from './utils';
 
 const store = configureStore({
   reducer: rootReducer,
@@ -38,7 +38,7 @@ ReactDOM.createRoot(window.document.getElementById('root') as HTMLElement).rende
                   if (err.response?.status && err.response.status >= 500) return true;
                   return false;
                 },
-                onError: handleError,
+                onError: UTILS.ERROS.handleError,
               },
             },
           })

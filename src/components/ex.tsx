@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
-import { URL } from '@/utils/common';
+import { UTILS } from '@/utils';
 
 import type { FC } from 'react';
 
@@ -43,10 +43,10 @@ const Ex: FC = () => {
       </button>
       {isShow && (
         <>
-          <Link to={`${URL}`}>홈</Link>
-          <Link to={`${URL.ex['error-boundary']}`}>에러 바운더리</Link>
-          <Link to={`${URL.ex['hook-form']}`}>훅 폼</Link>
-          <Link to={`${URL.ex['react-query']}`}>리액트 쿼리</Link>
+          <Link to={`${UTILS.COMMON.url}`}>홈</Link>
+          <Link to={`${UTILS.COMMON.url.ex['error-boundary']}`}>에러 바운더리</Link>
+          <Link to={`${UTILS.COMMON.url.ex['hook-form']}`}>훅 폼</Link>
+          <Link to={`${UTILS.COMMON.url.ex['react-query']}`}>리액트 쿼리</Link>
         </>
       )}
     </ExWrapper>
