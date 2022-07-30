@@ -21,7 +21,7 @@ export function useInterval(callback: TimerHandler, delay: Delay) {
   }, [callback]);
 
   useEffect(() => {
-    const handler = (...args: any[]) => savedCallbackRef.current!(...args);
+    const handler = (...args: any[]) => savedCallbackRef.current?.(...args);
 
     if (delay !== null) {
       const intervalId = setInterval(handler, delay);
