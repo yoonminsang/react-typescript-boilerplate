@@ -3,6 +3,8 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
 module.exports = {
   entry: './src/index.tsx',
   output: {
@@ -37,7 +39,8 @@ module.exports = {
                   labelFormat: '[dirname]--[filename]--[local]___',
                 },
               ],
-            ],
+              isDevelopment && 'react-refresh/babel',
+            ].filter(Boolean),
           },
         },
       },

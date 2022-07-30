@@ -1,4 +1,6 @@
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { merge } = require('webpack-merge');
+
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -8,7 +10,6 @@ module.exports = merge(common, {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-        // exclude: /node_modules/,
       },
     ],
   },
@@ -16,6 +17,7 @@ module.exports = merge(common, {
   devServer: {
     port: 3000,
     hot: true,
+    open: true,
     historyApiFallback: true,
     proxy: {
       '/api': {
@@ -25,4 +27,5 @@ module.exports = merge(common, {
       },
     },
   },
+  plugins: [new ReactRefreshWebpackPlugin()],
 });
